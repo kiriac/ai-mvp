@@ -1,0 +1,15 @@
+app-country-modal {
+  h1 {
+    text-align: center;
+  }
+  .value-confirmed{
+    width: 100%;
+    margin: 0;
+    text-align: right;
+    color: $red-text;
+  }
+  .btn-wrapper{
+    padding-top: 20px;
+    text-align: center;
+  }
+}
