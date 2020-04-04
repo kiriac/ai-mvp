@@ -2,11 +2,20 @@ app-country-modal {
   h1 {
     text-align: center;
   }
-  .value-confirmed{
+  p {
     width: 100%;
     margin: 0;
     text-align: right;
-    color: $red-text;
+    font-weight: bold;
+  }
+  .value-confirmed {
+   color: #3daadf;
+  }
+  .value-recovered {
+    color:#006400;
+  }
+  .value-death {
+    color: $primary-color;
   }
   .btn-wrapper{
     padding-top: 20px;

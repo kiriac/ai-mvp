@@ -1,12 +1,20 @@
 <h1 mat-dialog-title>{{data.country}}</h1>
 <mat-list>
-  <mat-list-item>Confirmed: <p class="value-confirmed">{{detailsOfCountry.confirmed.value}}</p></mat-list-item>
+  <mat-list-item>Confirmed:
+    <p class="value-confirmed">{{detailsOfCountry?.confirmed.value}}</p>
+  </mat-list-item>
   <mat-divider></mat-divider>
-  <mat-list-item>Recovered: <p class="value-confirmed">{{detailsOfCountry.recovered.value}}</p></mat-list-item>
+  <mat-list-item>Recovered:
+    <p class="value-recovered">{{detailsOfCountry?.recovered.value}}</p>
+  </mat-list-item>
   <mat-divider></mat-divider>
-  <mat-list-item> <mat-chip color="primary" selected>Deaths:</mat-chip>  <p class="value-confirmed">{{detailsOfCountry.deaths.value}}</p></mat-list-item>
+  <mat-list-item> Deaths:
+    <p class="value-death">{{detailsOfCountry?.deaths.value}}
+    </p></mat-list-item>
   <mat-divider></mat-divider>
-  <mat-list-item>LastUpdate<p class="value-confirmed">{{detailsOfCountry.lastUpdate |  date:'short' }} </p></mat-list-item>
+  <mat-list-item>LastUpdate:
+    <p class="value-update">{{detailsOfCountry?.lastUpdate |  date:'short' }} </p>
+  </mat-list-item>
 </mat-list>
 <div class="btn-wrapper">
   <button mat-button (click)="onNoClick()">Ok</button>

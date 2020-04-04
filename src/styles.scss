@@ -7,10 +7,11 @@
 @import "assets/styles/country-modal";
 @import "assets/styles/navbar";
 @import "assets/styles/footer";
+@import "assets/styles/snackbar";
 
 html, body {
   height: 100%;
-  overflow: hidden;
+  //overflow: hidden;
 }
 
 body {
