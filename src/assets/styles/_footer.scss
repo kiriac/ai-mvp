@@ -1,0 +1,18 @@
+app-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  .container-footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    .copyright{
+      margin-top: 10px;
+      font-weight: 400;
+      font-size: 15px;
+      letter-spacing: 0.88px;
+      text-transform: capitalize;
+    }
+  }
+}

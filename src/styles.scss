@@ -1,16 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 @import "assets/styles/colors";
 @import "assets/styles/variables";
-@import "assets/styles/app";
+@import "assets/styles/home";
 @import "assets/styles/confirmed";
 @import "assets/styles/country";
 @import "assets/styles/country-modal";
+@import "assets/styles/navbar";
+@import "assets/styles/footer";
 
 html, body {
   height: 100%;
+  overflow: hidden;
 }
 
 body {
   margin: 0;
+  box-sizing: border-box;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: $background-color;
+  color: $white-color;
 }
