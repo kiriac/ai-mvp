@@ -1,27 +1,4 @@
-<mat-drawer-container class="container" autosize>
-  <span *ngIf="showBtnCovid" class="material-icons btn-menu"
-        (click)="drawer.toggle(); showBtnCovid = !showBtnCovid">menu
-  </span>
-  <mat-drawer #drawer class="sidenav" mode="side">
-    <span *ngIf="!showBtnCovid"
-          class="material-icons btn-menu"
-          (click)="drawer.toggle(); showBtnCovid = !showBtnCovid">close
-    </span>
-    <mat-list>
-      <button type="button"
-              mat-button color="accent"
-              (click)="drawer.toggle(); showBtnCovid = !showBtnCovid"
-              routerLink="/">Covid 19
-      </button>
-      <mat-list-item *ngFor="let item of menuList">
-        <mat-icon mat-list-icon>attachment</mat-icon>
-        <div mat-line
-             [routerLink]="item"
-             (click)="drawer.toggle(); showBtnCovid = !showBtnCovid">{{item | uppercase}}
-        </div>
-      </mat-list-item>
-    </mat-list>
-  </mat-drawer>
-  <router-outlet></router-outlet>
-</mat-drawer-container>
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
 

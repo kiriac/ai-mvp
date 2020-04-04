@@ -6,22 +6,33 @@ import {Covid19Service} from '../../shared/services/covid19.service';
 import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material';
 import {CountryModalComponent} from '../../shared/components/country-modal/country-modal.component';
+import {SnackbarComponent} from '../../shared/components/snackbar/snackbar.component';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-country',
   templateUrl: './country.component.html'
 })
 export class CountryComponent implements OnInit {
+
+  constructor(
+    private router: Router,
+    private covidService: Covid19Service,
+    public dialog: MatDialog,
+    private snackBar: MatSnackBar) {
+  }
+
   myForm = new FormControl();
   covid;
   options = [];
   filteredOptions: Observable<string[]>;
   countryResult;
 
-  constructor(
-    private router: Router,
-    private covidService: Covid19Service,
-    public dialog: MatDialog) {
+  private static capitalize(inputValue) {
+    if (typeof inputValue !== 'string') {
+      return '';
+    }
+    return inputValue.charAt(0).toUpperCase() + inputValue.slice(1);
   }
 
   ngOnInit() {
@@ -44,6 +55,11 @@ export class CountryComponent implements OnInit {
   }
 
   openDialog(): void {
+    const inputValue = CountryComponent.capitalize(this.myForm.value);
+    if (!this.options.includes(inputValue)) {
+      this.openSnackBar();
+      return;
+    }
     const dialogRef = this.dialog.open(CountryModalComponent, {
       width: '500px',
       data: {country: this.myForm.value}
@@ -65,4 +81,9 @@ export class CountryComponent implements OnInit {
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
 
+  private openSnackBar() {
+    this.snackBar.openFromComponent(SnackbarComponent, {
+      duration: 5000,
+    });
+  }
 }

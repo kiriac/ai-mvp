@@ -1,35 +1,5 @@
-<!--<mat-drawer-container class="container" autosize>-->
-<!--  <span *ngIf="showBtnCovid" class="material-icons btn-menu"-->
-<!--        (click)="drawer.toggle(); showBtnCovid = !showBtnCovid">menu-->
-<!--  </span>-->
-<!--  <mat-drawer #drawer class="sidenav" mode="side">-->
-<!--    <span *ngIf="!showBtnCovid"-->
-<!--          class="material-icons btn-menu"-->
-<!--          (click)="drawer.toggle(); showBtnCovid = !showBtnCovid">close-->
-<!--    </span>-->
-<!--    <mat-list>-->
-<!--      <button type="button" mat-button color="accent"> Covid 19</button>-->
-<!--      <mat-list-item *ngFor="let item of menuList">-->
-<!--        <mat-icon mat-list-icon>attachment</mat-icon>-->
-<!--        <div mat-line>{{item}}</div>-->
-<!--      </mat-list-item>-->
-<!--      <mat-divider></mat-divider>-->
-<!--      <div mat-subheader>Last Update</div>-->
-<!--      <mat-list-item>-->
-<!--        <mat-icon mat-list-icon>access_time</mat-icon>-->
-<!--        <div mat-line> {{covid19All?.lastUpdate | date}} </div>-->
-<!--      </mat-list-item>-->
-<!--    </mat-list>-->
-<!--  </mat-drawer>-->
-<!--  <div class="sidenav-content">-->
-<!--    <div class="image-wrapper">-->
-<!--      <img src="{{covid19All?.image}}" alt="covid">-->
-<!--    </div>-->
-<!--    <div class="button-wrapper">-->
-<!--      <button type="button"-->
-<!--              class="btn-covid"-->
-<!--              mat-button color="accent">Covid 19-->
-<!--      </button>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</mat-drawer-container>-->
+  <div class="navbar-wrapper">
+    <a mat-raised-button color="primary" routerLink="countries">Covid By Country</a>
+    <a mat-raised-button color="primary" routerLink="confirmed">All Covid Cases</a>
+  </div>
+

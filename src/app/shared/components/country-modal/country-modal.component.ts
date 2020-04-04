@@ -23,7 +23,7 @@ export class CountryModalComponent implements OnInit{
   getDetailsOfCountry(reqParam) {
     this.covidService.getAllCcovid19(reqParam)
       .subscribe((resp) => {
-          this.detailsOfCountry = {...resp.body};
+          this.detailsOfCountry = resp.body;
           console.log(this.detailsOfCountry);
         },
         error => console.log(error));

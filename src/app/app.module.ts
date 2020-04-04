@@ -12,6 +12,9 @@ import {ConfirmedComponent} from './pages/confirmed/confirmed.component';
 import {CountryComponent} from './pages/country/country.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CountryModalComponent } from './shared/components/country-modal/country-modal.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import { SnackbarComponent } from './shared/components/snackbar/snackbar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { CountryModalComponent } from './shared/components/country-modal/country
     HomeComponent,
     ConfirmedComponent,
     CountryComponent,
-    CountryModalComponent
+    CountryModalComponent,
+    FooterComponent,
+    SnackbarComponent
   ],
   imports: [
     BrowserModule,
@@ -29,9 +34,10 @@ import { CountryModalComponent } from './shared/components/country-modal/country
     BrowserAnimationsModule,
     MaterialDesignModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
-  entryComponents: [CountryModalComponent],
+  entryComponents: [CountryModalComponent, SnackbarComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
