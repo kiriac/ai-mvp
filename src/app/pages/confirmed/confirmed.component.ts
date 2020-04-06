@@ -1,22 +1,24 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 import {Covid19Service} from '../../shared/services/covid19.service';
 import {MatTableDataSource} from '@angular/material';
 import {MatPaginator} from '@angular/material/paginator';
+import {ICovidAll19} from '../../shared/interfaces/covidAll19';
 
 
 @Component({
   selector: 'app-confirmed',
   templateUrl: './confirmed.component.html'
 })
-export class ConfirmedComponent implements OnInit {
+export class ConfirmedComponent {
   displayedColumns: string[] = [
     'Country/Province',
     'Confirmed',
     'Recovered',
     'Deaths'
   ];
-  dataSource;
+  isLoadingResults = true;
+  dataSource: MatTableDataSource<ICovidAll19>;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
   constructor(private router: Router,
@@ -27,12 +29,9 @@ export class ConfirmedComponent implements OnInit {
           ELEMENT_DATA = resp.body;
           this.dataSource = new MatTableDataSource(ELEMENT_DATA);
           this.dataSource.paginator = this.paginator;
+          this.isLoadingResults = false;
         },
         error => console.log(error)
       );
-  }
-
-  ngOnInit() {
-
   }
 }

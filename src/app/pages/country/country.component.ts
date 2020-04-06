@@ -8,6 +8,7 @@ import {MatDialog} from '@angular/material';
 import {CountryModalComponent} from '../../shared/components/country-modal/country-modal.component';
 import {SnackbarComponent} from '../../shared/components/snackbar/snackbar.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {ICovidAll19} from '../../shared/interfaces/covidAll19';
 
 @Component({
   selector: 'app-country',
@@ -23,10 +24,9 @@ export class CountryComponent implements OnInit {
   }
 
   myForm = new FormControl();
-  covid;
+  covid: ICovidAll19;
   options = [];
   filteredOptions: Observable<string[]>;
-  countryResult;
 
   private static capitalize(inputValue) {
     if (typeof inputValue !== 'string') {
@@ -44,7 +44,7 @@ export class CountryComponent implements OnInit {
       );
   }
 
-  getAllCovid19Countries(reqParam) {
+  getAllCovid19Countries(reqParam: string) {
     this.covidService.getAllCcovid19(reqParam)
       .subscribe((resp) => {
           this.covid = {...resp.body};
@@ -64,11 +64,7 @@ export class CountryComponent implements OnInit {
       width: '500px',
       data: {country: this.myForm.value}
     });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.countryResult = result;
-    });
+    dialogRef.afterClosed();
   }
 
   private addOptionsValue(covid) {

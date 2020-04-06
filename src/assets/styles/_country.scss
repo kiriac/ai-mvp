@@ -1,18 +1,16 @@
+@import "mixins";
 app-country {
-  .container-form{
+  .container-form {
     height: 85%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
   }
-  .country-form {
-    min-width: 100px;
-    max-width: 300px;
+  .form-full-width {
     width: 100%;
-  }
-
-  .example-full-width {
-    width: 100%;
+    @include desktop {
+      min-width: 400px;
+    }
   }
 }

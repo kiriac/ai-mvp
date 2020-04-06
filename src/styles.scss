@@ -8,10 +8,11 @@
 @import "assets/styles/navbar";
 @import "assets/styles/footer";
 @import "assets/styles/snackbar";
+@import "assets/styles/mixins";
 
 html, body {
   height: 100%;
-  //overflow: hidden;
+  overflow: auto;
 }
 
 body {

@@ -18,12 +18,9 @@ export class HomeComponent implements OnInit {
     this.getAllCovid19(this.param);
   }
 
-  getAllCovid19(reqParam) {
+  getAllCovid19(reqParam: string) {
     this.covidService.getAllCcovid19(reqParam)
-      .subscribe((resp) => {
-          this.covid19All = {...resp.body};
-          console.log(this.covid19All);
-        },
+      .subscribe((resp) => this.covid19All = {...resp.body},
         error => console.log(error)
       );
   }

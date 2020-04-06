@@ -34,5 +34,17 @@
     countries: string;
     countryDetail: ICountryDetail;
     lastUpdate: Date;
+    provinceState?: string;
+    countryRegion?: string;
+    lat?: number;
+    long?: number;
+    active?: number;
+    admin2?: string;
+    fips?: string;
+    combinedKey?: string;
+    incidentRate?: any;
+    peopleTested?: any;
+    iso2?: string;
+    iso3?: string;
   }
 
